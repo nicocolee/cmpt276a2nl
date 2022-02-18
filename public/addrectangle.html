@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addrectangle</title>
+    <link rel="stylesheet" href="./stylesheets/rectangles.css">
+</head>
+<body>
+    <h1>Add A New Rectangle</h1>
+    <form action="/addrectangle" class="" method="post">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" value="" placeholder="Name">
+        </div>
+        <div>
+            <label for="color">Color</label>
+            <input type="text" name="color" value="" placeholder="Color">
+        </div>
+        <div>
+            <label for="width">Width</label>
+            <input type="text" name="width" value="" placeholder="Width">
+        </div>
+        <div>
+            <label for="height">Height</label>
+            <input type="text" name="height" value="" placeholder="Height">
+        </div>
+        <div>
+            <label for="personality">Personality</label>
+            <input type="text" name="personality" value="" placeholder="Personality">
+        </div>
+        <div>
+            <label for="continent">Continent</label>
+            <input type="text" name="continent" value="" placeholder="Continent">
+        </div>
+        <div class="button"> 
+            <button type="submit">Add Rectangle</button>
+        </div>
+    </form>
+    <p class="button">
+        <button onclick="location.href = '/database'">View All</button>
+    </p>
+</body>
+</html>

@@ -1,23 +1,57 @@
 <!DOCTYPE html>
 <html>
+<style>
+  table {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  td, th {
+      border: 1px solid  #b8b8b8;
+      font-size: 13px;
+      text-align: left;
+      padding: 4px;
+  }
+
+  th {background-color: #d1d1d1;}
+  [type="text"] {
+      border: 1px solid #9b9a9a;
+      border-radius: 2px;
+      width: 40px;
+      height: 25px;
+  }
+</style>
 <head>
-  <%- include ("../partials/header.ejs") %>
 </head>
 
 <body>
+  <div class="container">
+    <h2>Database Results</h2>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Delete The Rectangle</th>
+      </tr>
+      
+      <% results.forEach(function(r) { %>
+      <tr>
+        <td><%= r.id %></td>
+        <td><a href="/rect/<%=r.id%>"><%= r.name %></td>
+        <td><%= r.color %></td>
+        <td class="button">
+          <form action="/rect/<%=r.id%>" method="post">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
 
-<%- include ("../partials/nav.ejs") %>
-
-<div class="container">
-<h2>Database Results</h2>
-
-<ul>
-    <% results.forEach(function(r) { %>
-        <li><%= r.id %> - <%= r.name %></li>
-    <% }); %>
-</ul>
-
-</div>
-
+      <% }); %>
+      
+      </table> <br>
+      <button onclick="location.href = '/addrectangle.html'">Add A New Rectangle</button>
+  </div>
 </body>
+
 </html>

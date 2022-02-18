@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Rectangle Details</h2>
+
+      <% results.forEach(function(r) { %>
+        
+        <canvas id="canvas" width="<%= r.width %>" height="<%= r.height %>" style="background: <%= r.color %>""></canvas>
+        <script> var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        context.font = "20px Arial";
+        context.fillText("<%= r.name %>",20,30); </script>
+        <form action="/editrect/<%=r.id%>" method = "POST">
+          <table>
+          <tr><td>ID</td>           <td><input type="text" name="id" disabled value=<%= r.id %>></td></tr>
+          <tr><td>Name</td>         <td><input type="text" name="name" value=<%= r.name %>></td></tr>
+          <tr><td>Color</td>        <td><input type="text" name="color" value=<%= r.color %>></td></tr>
+          <tr><td>Width</td>        <td><input type="text" name="width" value=<%= r.width %>></td></tr>
+          <tr><td>Height</td>       <td><input type="text" name="height" value=<%= r.height %>></td></tr>
+          <tr><td>Personality</td>  <td><input type="text" name="personality" value=<%= r.personality %>></td></tr>
+          <tr><td>Continent</td>    <td><input type="text" name="continent" value=<%= r.continent %>></td></tr>
+          <br>
+          </table>
+          <button type="submit">Edit Details</button>
+        </form>
+        <form action="/database">
+          <button type="submit"> View All</button>
+        </form>
+        
+      <% }); %>
+      
+    </ul>
+    
+  </div>
+
+</body>
+</html>
